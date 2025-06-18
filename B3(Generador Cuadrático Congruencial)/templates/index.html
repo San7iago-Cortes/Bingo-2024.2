@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de Bingo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+/*Animación para cuando una casilla se marca*/
+        .marked {
+            background-color: #28a745;
+            color: white;
+            transition: background-color 0.5s ease-in-out, transform 0.2s ease;
+            transform: scale(1.05);
+        }
+        .marked:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='bingo.gif') }}" alt="Bingo" style="max-width: 100%; height: auto;">
+        
+        <form id="generate-card-form">
+            <input type="text" id="participant-name" placeholder="Nombre del participante" required>
+            <button type="submit" id="generate-card-button">Generar tabla</button>
+        </form>
+        <button id="extract-button" disabled>Sacar número</button>
+        <button id="reset-button">Reiniciar</button>
+<!-- Contenedor de las tablas -->
+        <div id="bingo-cards-container"></div> Contenedor de las tablas
+        <ul id="numbers-list"></ul>
+
+<!-- Barra de volumen-->
+        <div id="music-container">
+            <label for="volume-control">Control de volumen:</label>
+            <input type="range" id="volume-control" min="0" max="1" step="0.01" value="0.5">
+            <audio id="background-music" loop>
+                <source src="{{ url_for('static', filename='Carnival_Kerfuffle.mp3') }}" type="audio/mpeg">
+                <source src="{{ url_for('static', filename='Carnival_Kerfuffle.ogg') }}" type="audio/ogg">
+                Tu navegador no soporta la reproducción de audio.
+            </audio>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='functions.js') }}"></script>
+</body>
+</html>

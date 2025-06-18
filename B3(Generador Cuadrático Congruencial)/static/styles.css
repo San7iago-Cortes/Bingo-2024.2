@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/bingo_background.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    color: white;
+}
+
+.container {
+    margin: 20px auto;
+    width: 90%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+#extract-button, #reset-button, #generate-card-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#extract-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#reset-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#generate-card-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#number-label {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#numbers-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#numbers-list li {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: #17a2b8;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.bingo-card {
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+.bingo-card th, .bingo-card td {
+    border: 1px solid #333;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.bingo-card th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.bingo-card td {
+    background-color: #fff;
+    color: #000;
+}
+
+.bingo-card td.marked {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.bingo-card td.free-space {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.card-container {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card-container h3 {
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+/*Celdas que no pueden ser marcadas aún*/
+td.not-extractable {
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+/*Celdas que pueden ser marcadas*/
+td.extractable {
+    cursor: pointer;
+}
+
+/*Efecto al pasar el mouse*/
+td.extractable:hover {
+    background-color: #f8f9fa;
+}
